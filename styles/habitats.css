@@ -1,0 +1,31 @@
+/* --- Images des habitats des animaux --- */
+.habitat-description img {
+    max-width: 100%;
+    max-height: 250px; /* Taille uniforme pour les images d'habitat */
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* --- Images dans les avis (si applicable) --- */
+.avis-item img {
+    width: 80px; /* Taille réduite pour l'image de l'auteur ou de l'animal */
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px){
+    .habitat-description img,.animals-list img{
+        max-width: 100%; /* Permet aux images de s'ajuster aux tailles d'écran plus petites */
+        height: auto; /* Ajuste la hauteur en fonction de la largeur */
+    }
+}
+/* --- Images des animaux dans la liste des habitats --- */
+.animals-list img {
+    max-width: 80px; /* Limite la largeur de l'image */
+    height: 80px; /* Uniformise la hauteur de l'image */
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
