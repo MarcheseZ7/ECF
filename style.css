@@ -1,0 +1,368 @@
+/* --- Variables globales --- */
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #333;
+    --accent-color: #45a049;
+    --text-color: #333;
+    --bg-color: #f9f9f9;
+    --header-bg: #4CAF50;
+    --footer-bg: #333;
+    --button-hover: #3e8e41;
+    --card-hover: #e0f7e0;
+    --floating-elements-color: rgba(255, 255, 255, 0.8);
+}
+
+/* --- Styles généraux --- */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background:url('images/zoo-menu.png') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+a, button {
+    transition: all 0.3s ease;
+}
+
+/* --- Contenu principal --- */
+main {
+    padding: 2rem;
+    max-width: 900px;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Section de feuilles flottantes --- */
+main::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -20px;
+    width: 100px;
+    height: 100px;
+    background: url('images/animal-icon.svg') no-repeat center/contain;
+    z-index: -1;
+}
+
+main h2 {
+    color: var(--primary-color);
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+main p, main ul {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #e8f5e9;
+    border-left: 4px solid var(--primary-color);
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+ul li:hover {
+    background-color: var(--card-hover);
+    transform: translateX(5px);
+}
+
+/* --- Formulaires --- */
+form {
+    margin-top: 2rem;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    display: block;
+    color: var(--primary-color);
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+textarea {
+    resize: vertical;
+}
+
+button, .btn-primary {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover, .btn-primary:hover {
+    background-color: var(--button-hover);
+    transform: scale(1.05);
+}
+
+/* --- En-tête --- */
+header {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: #fff;
+    text-align: center;
+    padding: 4rem 0;
+    margin-bottom: 0rem;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    border: solid #ffffff;
+    border-top-width:0;
+    border-left-width:0;
+    border-right-width:0;
+}
+
+/* Classe spécifique pour le bouton en haut à droite */
+.button-top-right {
+    position: fixed; /* Fixe le bouton à une position spécifique sur l'écran */
+    top: 20px; /* Place le bouton à 20px du haut */
+    right: 20px; /* Place le bouton à 20px de la droite */
+    background-color: var(--primary-color); /* Couleur de fond du bouton */
+    color: #fff; /* Couleur du texte */
+    border-radius: 6px; /* Coins arrondis */
+    padding: 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border:solid 2px #fff; /* Contour du bouton en blanc*/
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+/* Effet au survol du bouton */
+.button-top-right:hover {
+    background-color: var(--button-hover); /* Changement de couleur au survol */
+    transform: scale(1.05); /* Effet de zoom lors du survol */
+}
+
+header h1 {
+    font-size: 2.8rem;
+    margin: 0.5rem 0;
+    position: relative;
+    z-index: 2;
+}
+header p {
+    font-size: 1rem;
+}
+header::before {
+    top: 10px;
+    left: 10%;
+}
+
+header::after {
+    top: 20px;
+    right: 10%;
+}
+
+/* --- Navigation --- */
+nav {
+    background-color: var(--secondary-color);
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem 0;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    padding: 10px 20px;
+    border-radius: 30px;
+    background-color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1rem;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav a:hover {
+    background-color: var(--button-hover);
+    transform: scale(1.1);
+}
+
+
+/* --- Modale --- */
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    height: auto;
+    z-index: 1000;
+    animation: slideIn 0.4s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.modal.active {
+    display: block;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.overlay.active {
+    display: block;
+}
+
+/* --- Pied de page avec bord déchiré --- */
+footer {
+    background-color: var(--footer-bg);
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    border-radius: 10px;
+}
+
+/* --- Réactivité mobile --- */
+@media (max-width: 768px) {
+    .avis-item, .animals-list li {
+        padding: 1rem;
+        max-width: 100%;
+    }
+
+    .modal {
+        width: 95%;
+    }
+
+    .nav a {
+        margin: 10px;
+    }
+    .button-top-right {
+        padding: 0;
+    }
+    .avis-container {
+        padding: 30px;
+        gap: 70px;
+    }
+}
+/* --- Logo Accueil ---*/
+/* Bouton fixe en haut à gauche avec image*/
+.fixed-button {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    cursor:pointer;
+    z-index: 1000;
+    box-shadow: none;
+}
+
+.fixed-button:hover {
+    background-color: transparent;
+}
+
+.fixed-button img{
+    width: 120px;
+    height: auto;
+    transition: transform 0.4s ease, opacity 0.3s ease;
+    box-shadow: none;
+}
+
+.fixed-button:hover img {
+    transform: scale(1.1);
+}
+
+/* --- Styles des images --- */
+img {
+    max-width: 835px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover; /* Assure que l'image couvre son conteneur sans déformation */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Images des animaux dans la galerie --- */
+.animal-gallery {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.animal {
+    text-align: center;
+    max-width: 150px;
+    width: 100%;
+}
+
+.animal img {
+    max-width: 100%; /* Image ne dépassant pas la taille de son conteneur */
+    height: 225px; /* Hauteur uniforme pour les images des animaux */
+
+    object-fit: cover; /* Couvre uniformément sans déformation */
+    border-radius: 10px;
+}
+
+.animal p {
+    margin-top: 0.5rem;
+    font-weight: bold;
+    font-size: 1rem;
+}

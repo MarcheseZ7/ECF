@@ -1,0 +1,76 @@
+/* --- Section des avis --- */
+.avis {
+    background-color: #f9f9f9;
+    padding: 30px;
+    text-align: center;
+}
+
+.avis h2 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.avis-container {
+    display: flex;
+    justify-content: space-between; /* Aligne les avis horizontalement */
+    gap: 70px;
+    flex-wrap: wrap;
+}
+
+.avis-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 210px;
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.avis-item:hover {
+    transform: scale(1.05);
+}
+
+.avis-content p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-top: 10px;
+}
+
+.avis-item .avis-author {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-top: 1rem;
+}
+
+.avis-rating {
+    margin-bottom: 10px;
+}
+
+.star {
+    color: #FFD700; /* Couleur dorée pour les étoiles */
+    font-size: 18px;
+}
+
+.star:hover {
+    color: #FFA500; /* Légère variation de couleur au survol */
+}
+
+/* --- Réactivité mobile --- */
+@media (max-width: 768px) {
+    .animal img,.avis-item img {
+        max-width: 100%; /* Permet aux images de s'ajuster aux tailles d'écran plus petites */
+        height: auto; /* Ajuste la hauteur en fonction de la largeur */
+    }
+}
+
+.animal-gallery {
+    gap: 30px; /* Réduit l'écart entre les images pour mieux s'adapter aux petits écrans */
+}
+
+.animal {
+    max-width: 185px; /* Réduit la taille des images sur mobile */
+}
